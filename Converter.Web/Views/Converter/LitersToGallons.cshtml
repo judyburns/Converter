@@ -1,0 +1,35 @@
+﻿@model Converter.Web.Models.LitGalViewModel
+
+@{
+    ViewBag.Title = "Liters to Gallons Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">LITERS / GALLONS</h1>
+</div>
+
+
+@using (Html.BeginForm("LitersToGallons", "Converter", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4 text-center">
+            @Html.Label("Convert From")<br />
+            @Html.DropDownListFor(model => model.Choice, new List<SelectListItem>() {new SelectListItem { Text = "Liters", Value = "l" },
+new SelectListItem { Text = "Gallons", Value = "g" }
+})<br /><br />
+        </div>
+        <div class="col-md-4 text-center">
+            @Html.Label("Enter Measure")<br />
+            @Html.TextBoxFor(model => model.Measurement) <br /><br />
+        </div>
+        <div class="col-md-4 text-center">
+            @Html.Label("Result")<br />
+            @Html.TextBoxFor(model => model.Result) <br /><br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class="btn-lg" type="submit" onclick="@("location.href='"+ Url.Action("LitersToGallons","Converter")+ "'")">Submit</button>
+        </div>
+    </div>
+}

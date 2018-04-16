@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Converter Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">JB'S CONVERTERS</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4 text-center">
+        <h2>Liters / Gallons</h2>
+        <button class="btn-lg" type="button" onclick="@("location.href='"+ Url.Action("LitersToGallons","Converter")+ "'")">Select</button>
+    </div>
+    <div class="col-md-4 text-center">
+        <h2>Pounds / Kilograms</h2>
+        <button class="btn-lg" type="button" onclick="@("location.href='"+ Url.Action("PoundsToKilograms","Converter")+ "'")">Select</button>
+    </div>
+    <div class="col-md-4 text-center">
+        <h2>Farenheit / Celsius</h2>
+        <button class="btn-lg" type="button" onclick="@("location.href='"+ Url.Action("FarenheitToCelsius","Converter")+ "'")">Select</button>
+    </div>
+</div>

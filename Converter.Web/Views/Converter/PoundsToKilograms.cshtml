@@ -1,0 +1,34 @@
+﻿@model Converter.Web.Models.LbsKilViewModel
+
+@{
+    ViewBag.Title = "Pounds to Kilograms Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">POUNDS / KILOGRAMS</h1>
+</div>
+
+@using (Html.BeginForm("PoundsToKilograms", "Converter", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4 text-center">
+            @Html.Label("Convert From")<br />
+            @Html.DropDownListFor(model => model.Choice, new List<SelectListItem>() {new SelectListItem { Text = "Pounds", Value = "p" },
+new SelectListItem { Text = "Kilograms", Value = "k" }
+})<br /><br />
+        </div>
+        <div class="col-md-4 text-center">
+            @Html.Label("Enter Measure")<br />
+            @Html.TextBoxFor(model => model.Measurement) <br /><br />
+        </div>
+        <div class="col-md-4 text-center">
+            @Html.Label("Result")<br />
+            @Html.TextBoxFor(model => model.Result) <br /><br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class="btn-lg" type="submit" onclick="@("location.href='"+ Url.Action("PoundsToKilograms","Converter")+ "'")">Submit</button>
+        </div>
+    </div>
+}

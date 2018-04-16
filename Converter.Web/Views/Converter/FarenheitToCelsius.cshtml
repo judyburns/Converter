@@ -1,0 +1,37 @@
+﻿@model Converter.Web.Models.FarCelViewModel
+
+@{
+    ViewBag.Title = "Farenheit to Celsius Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">FARENHEIT / CELSIUS</h1>
+</div>
+
+@using (Html.BeginForm("FarenheitToCelsius", "Converter", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4 text-center">
+            @Html.Label("Convert From")<br />
+            @Html.DropDownListFor(model => model.Choice, new List<SelectListItem>() {new SelectListItem { Text = "Farenheit", Value = "f" },
+new SelectListItem { Text = "Celsius", Value = "c" }
+})<br /><br />
+        </div>
+        <div class="col-md-4 text-center">
+            @Html.Label("Enter Temperature")<br />
+            @Html.TextBoxFor(model => model.Temperature) <br /><br />
+        </div>
+        <div class="col-md-4 text-center">
+            @Html.Label("Result")<br />
+            @Html.TextBoxFor(model => model.Result) <br /><br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class="btn-lg" type="submit" onclick="@("location.href='"+ Url.Action("DisplayFar2CelResult","Converter")+ "'")">Submit</button>
+        </div>
+    </div>
+}
+
+
+
