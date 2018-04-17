@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Converter.Web.Models
+namespace Converter.Web.ViewModels
 { 
     public class FarCelViewModel
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Converter.Business.Class;
-using Converter.Web.Models;
+using Converter.Web.ViewModels;
 
 namespace Converter.Web.Controllers
 {
